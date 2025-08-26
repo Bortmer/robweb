@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Robert Lounsbury</title>
+  <meta name="description" content="Personal one-page site for Robert Lounsbury." />
+  <style>
+    /* --- Simple, single-file styling --- */
+    :root {
+      --bg: #0f172a;          /* slate-900 */
+      --fg: #e2e8f0;          /* slate-200 */
+      --muted: #94a3b8;       /* slate-400 */
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --accent: #38bdf8;      /* sky-400 */
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;        /* slate-50 */
+        --fg: #0f172a;        /* slate-900 */
+        --muted: #475569;     /* slate-600 */
+        --card: rgba(0,0,0,0.03);
+        --border: rgba(0,0,0,0.08);
+        --accent: #0284c7;    /* sky-600 */
+      }
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--fg);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(56,189,248,.15), transparent 60%),
+                  radial-gradient(800px 400px at 90% 80%, rgba(56,189,248,.12), transparent 55%),
+                  var(--bg);
+      display: grid;
+      place-items: center;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(92vw, 720px);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: clamp(1.25rem, 2.5vw + 0.5rem, 2.5rem);
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 3.5vw + 1rem, 3rem);
+      line-height: 1.2;
+      margin: 0 0 .5rem 0;
+      letter-spacing: .5px;
+    }
+
+    p {
+      margin: 0;
+      font-size: clamp(1rem, .5vw + .9rem, 1.125rem);
+      color: var(--muted);
+    }
+
+    footer {
+      position: fixed;
+      inset: auto 0 14px 0;
+      text-align: center;
+      font-size: .9rem;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .accent {
+      color: var(--accent);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Edit your name/description below. Keep it simple. -->
+    <h1>Robert Lounsbury</h1>
+    <p>
+      A short personal description goes here. For example: <span class="accent">developer</span>, builder, and lifelong learner.
+      You can replace this text with anything you want—what you do, what you enjoy, or what visitors should know about you.
+    </p>
+  </main>
+
+  <footer>© <span id="year"></span> Robert Lounsbury</footer>
+
+  <script>
+    // Keep the year current automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
